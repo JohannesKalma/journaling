@@ -1,0 +1,122 @@
+/*--------------------------------------------------------------
+# Elements from underscores and materializecss
+--------------------------------------------------------------*/
+
+/* start global styling */
+/* border-box: Include padding and border in the element's total width and height */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+	//background: #fff;
+      background: #f6f6f6;
+  //background: #4e4e4e;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: #039be5;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover, a:focus, a:active {
+	//color: #039be5;
+}
+
+a:visited {
+	//color: #039be5;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul, ol {
+	margin: 0 0 1.5em 1em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+blockquote {
+  margin: 0 0 1.3rem 0;
+  padding: 30px 30px 30px 50px;
+  background: rgba(0, 0, 0, 0.05);
+  position: relative;
+  border-left: 5px solid #a2a2a2;
+}
+
+blockquote p {
+  margin: 0px 0px 20px 0px;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  font-size: 0.75em;
+  padding-left: 20px;
+  font-style: italic;
+}
