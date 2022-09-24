@@ -9,6 +9,7 @@ console.log(process.env)
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
+var editorRouter = require('./routes/editor');
 
 var app = express();
 
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/editor', editorRouter);
 app.use('/login', loginRouter);
 app.use('/', indexRouter);
 
