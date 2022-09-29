@@ -7,3 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+/*
+get /    = zonder id = nieuw document
+get /:id = edit bestaand document
+
+post /   = save new document
+post(put) /   = update bestaand document
+*/
