@@ -1,7 +1,41 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="<%= process.env.BASE_URL %>/css/login.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="login-form">
 
-<form action="<%= process.env.BASE_URL %>/login" method="POST">
-    <div><input type="text" name="username" placeholder="User"></div>
-    <div><input type="password" name="_key" placeholder="Key"></div>
-    <div><button>Login</button></div>
-</form>
+  <form action="<%= process.env.BASE_URL %>/login" method="POST">
+    <h1>Login</h1>
+    <div class="content">
+         <% if (locals.return_page) { %>
+         <input type="hidden" name="return_page" value=" <%= locals.return_page %> ">
+         <% } %>
+      <div class="input-field">
+        <input type="name" name="_name" placeholder="Email" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <input type="password" name="_key" placeholder="Password" autocomplete="new-password">
+      </div>
+      <% if (locals.message) { %>
+        <div class="message">
+           <%= locals.message %>
+        </div>
+     <% } %>
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+      <button>Register</button>
+      <button>Sign in</button>
+    </div>
+  </form>
+</div>
+<!-- partial -->
+  <script  src="<%= process.env.BASE_URL %>/js/login.js"></script>
+</body>
+</html>

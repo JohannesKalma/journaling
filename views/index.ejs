@@ -2,10 +2,22 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% if (access_granted===true ) { %>
+      <div class="right" style="margin-top:-2rem"><a href="./editor">⊕</a></div>
+    <% } %>
+    <hr>
+    <ul>
+    <% for(var i=0; i<content.length; i++) { %>
+        <li><a href="./<%- content[i].file %>""><%- content[i].title %></a></li>
+    <% } %>
+    </ul>
   </body>
 </html>
+
+
+

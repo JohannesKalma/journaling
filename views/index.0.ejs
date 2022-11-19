@@ -1,0 +1,10 @@
+<% if (access_granted===true ) { %>
+  <div class="right" style="margin-top:-2rem"><a href="./new">⊕</a></div>
+<% } %>
+  <hr>
+
+  <ul>
+  <% for(var i=0; i<content.length; i++) { %>
+      <li><a href="<%- content[i].file %>""><%- content[i].title %></a></li>
+  <% } %>
+  </ul>

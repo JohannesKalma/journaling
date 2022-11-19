@@ -1,0 +1,11 @@
+<% if ( locals.message ) { %>
+  <div class="message"><%- message %></div>
+<% } %>
+<h1><%- data.title %></h1>
+
+<p><%- content %></p>
+
+<div class="left"><a href=".">⏎</a></div>
+<% if ( access_granted===true ) { %>
+  <div class="right" style="transform: rotate(100deg);"><a href="./editor/<%- file %>">✎</a></div>
+<% } %>
