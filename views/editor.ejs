@@ -21,7 +21,7 @@
     </div>
     <div class="body">
       <div class="container">
-        <form method="post">
+        <form method="post" action="<%= process.env.BASE_URL %>/.">
           <input type="hidden" name="_method" value="<%= locals._method%>" />
           <textarea name="dat"><%= locals.dat %></textarea>
           <button>save</button>
