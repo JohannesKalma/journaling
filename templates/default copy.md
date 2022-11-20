@@ -5,5 +5,6 @@ Author: Johannes Kalma
 Date: 2001-04-25
 Robots: noindex,nofollow
 Template: index
+UrlSlug: welcome
 ---
 ## markdown

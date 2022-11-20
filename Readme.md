@@ -7,21 +7,21 @@ node-modules:
 
 step 1:
 create (generate) a base express application: 
-$ npx express-generator --view=ejs --git
+`$ npx express-generator --view=ejs --git`
   -- ejs is the viewer
   -- it's a git project (add .gitignore)
 
 install nodemon (only development dependency)
-$ npm install --save-dev nodemon
+`$ npm install --save-dev nodemon`
 
 ejs installation showed a critical serverity vulnerability message:
-$ npm audit fix --force
+`$ npm audit fix --force`
 
 to make use of a .env file the dotenv module is needed:
-$ npm install --save dotenv
+`$ npm install --save dotenv`
 
 and finaly for the auth I'm going to use jsonwebtoken
-$ npm install --save jsonwebtoken
+`$ npm install --save jsonwebtoken`
 
 now all modules needed have been installed.
 

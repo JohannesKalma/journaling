@@ -45,12 +45,17 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET - single recipe. */
+/**
+ * https://danielmiessler.com/study/difference-between-uri-url/ 
+ * read this page to get some insight in url urn uri .... 
+ */
 router.get('/:i',function(req, res, next) {
   if ( req.params.i.match('^[0-9]{8}-[0-9]{5}') ){
     //try {
-      let dat=fs.readFileSync(docPath+'/'+req.params.i,'utf8');
-      dat=matter(dat);
-      //console.log(dat.data);
+      let fileContent=fs.readFileSync(docPath+'/'+req.params.i,'utf8');
+      console.log(fileContent);
+      dat=matter(fileContent);
+      console.log(dat);
       res.render('single',{file: req.params.i,dat:dat.data,content: md.render(dat.content),access_granted:res.access_granted});
     //}
     //catch (err){
@@ -58,14 +63,7 @@ router.get('/:i',function(req, res, next) {
     //}
   } //else {
     //next(createError(404));
-  //}  
+  //}
 })
-
-
-/* GET home page. */
-//router.get('/', function(req, res, next) {
-//  console.log(req.access_granted);//
-//  res.render('index', { title: 'Express Johannes',access_granted:req.access_granted });
-//});
 
 module.exports = router;
