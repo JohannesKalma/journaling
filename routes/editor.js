@@ -67,7 +67,7 @@ router.post('/:id',function(req,res,next){
 router.post('*',function(req,res,next){
   res.documentPath=__dirname + '/../documents/'+res.documentId;
   fs.writeFileSync(res.documentPath,req.body.dat);
-  res.redirect('/editor/'+res.documentId);
+  res.redirect(process.env.BASE_URL+'/editor/'+res.documentId);
 })
 
 module.exports = router;
