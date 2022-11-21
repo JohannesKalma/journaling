@@ -60,14 +60,14 @@ router.post('/',function(req,res,next){
 
 router.post('/:id',function(req,res,next){
   //update file
-  res.documentId=req.params.id;
+  res.documentId = req.params.id;
   next();
 })
 
 router.post('*',function(req,res,next){
-  res.documentPath=__dirname + '/../documents/'+res.documentId;
+  res.documentPath = __dirname + '/../documents/'+res.documentId;
   fs.writeFileSync(res.documentPath,req.body.dat);
-  res.redirect(process.env.BASE_URL+'/editor/'+res.documentId);
+  res.redirect(process.env.BASE_URL+'/'+res.documentId);
 })
 
 module.exports = router;

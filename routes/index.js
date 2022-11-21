@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
     } 
   });
 
-  res.render('index',{content:docArr,access_granted:res.access_granted,title:'Documenten xyz'});
+  res.render('index',{content:docArr,access_granted:res.access_granted,title:'Journal Johannes'});
 });
 
 /* GET - single recipe. */
