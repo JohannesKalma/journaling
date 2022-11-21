@@ -56,7 +56,7 @@ router.get('/:i',function(req, res, next) {
       console.log(fileContent);
       dat=matter(fileContent);
       console.log(dat);
-      res.render('single',{file: req.params.i,dat:dat.data,content: md.render(dat.content),access_granted:res.access_granted});
+      res.render('single',{file: req.params.i,data:dat.data,content: md.render(dat.content),access_granted:res.access_granted});
     //}
     //catch (err){
     //  next(createError(404));
