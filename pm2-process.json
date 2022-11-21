@@ -1,6 +1,0 @@
-{
-    "script": "bin/www",
-    "watch": true,
-    "ignore_watch": ["documents"],
-    "name": "journaling"
-}

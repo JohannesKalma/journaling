@@ -6,6 +6,7 @@
          <%= locals.title %>
       <% } %>
     </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
     <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/editor.css' />
   </head>
   <body>
@@ -23,10 +24,16 @@
       <div class="container">
         <form method="post" action="<%= process.env.BASE_URL %>/editor">
           <input type="hidden" name="_method" value="<%= locals._method%>" />
-          <textarea name="dat"><%= locals.dat %></textarea>
+          <div style="font-family:monospace;">
+            <textarea name="dat"><%= locals.dat %></textarea>
+          </div>
           <button>save</button>
         </form>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script>
+       const easyMDE = new EasyMDE();
+    </script>
   </body>
 </html>
