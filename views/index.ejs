@@ -7,9 +7,14 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <div>
+
     <% if (access_granted===true ) { %>
-      <div><a href="./editor">edit</a></div>
+      <a href="./editor">New</a>
+      <% } else { %>
+        New
     <% } %>
+  </div>
     <hr>
     <ul>
     <% for(var i=0; i<content.length; i++) { %>
