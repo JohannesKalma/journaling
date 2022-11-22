@@ -1,4 +1,6 @@
 var express = require('express');
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
 var router = express.Router();
 let fs = require('fs');
 
@@ -42,31 +44,43 @@ router.get('/:id',function(req,res,next){
   //edit document
   res.documentPath=__dirname + '/../documents/'+req.params.id;
   res._method='PUT';
+  res._file=req.params.id;
   next();
 });
 
 router.get('*',function(req,res,next){
   let document = fs.readFileSync(res.documentPath,'utf-8');
-  res.render('editor',{dat:document,_method:res._method});
+  res.render('editor',{dat:document,_method:res._method,file:res._file});
 });
+
+//router.use(bodyParser.urlencoded());
+router.use(methodOverride('_method'));
+
+/*router.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    req.method = req.body._method
+    //delete req.body._method
+    console.log(req.method);
+    next();
+  }
+}))*/
 
 router.post('/',function(req,res,next){
   //save new file
-  console.log('newwwwwwwwwxxxxxxxxx');
   let date = require('date-and-time');
   let now = new Date();
   res.documentId = date.format(now,'YYYYMMDD-HHmmss')+'.md';
   next();
 })
 
-router.post('/:id',function(req,res,next){
+router.put('/:id',function(req,res,next){
   //update file
-  console.log('updatexxxxxxxxx');
   res.documentId = req.params.id;
   next();
 })
 
-router.post('*',function(req,res,next){
+router.all('*',function(req,res,next){
   res.documentPath = __dirname + '/../documents/'+res.documentId;
   fs.writeFileSync(res.documentPath,req.body.dat);
   res.redirect(process.env.BASE_URL+'/'+res.documentId);
