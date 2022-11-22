@@ -53,9 +53,9 @@ router.get('/:i',function(req, res, next) {
   if ( req.params.i.match('^[0-9]{8}-[0-9]{5}') ){
     //try {
       let fileContent=fs.readFileSync(docPath+'/'+req.params.i,'utf8');
-      console.log(fileContent);
+      //console.log(fileContent);
       dat=matter(fileContent);
-      console.log(dat);
+      //console.log(dat);
       res.render('single',{file: req.params.i,data:dat.data,content: md.render(dat.content),access_granted:res.access_granted});
     //}
     //catch (err){

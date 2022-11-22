@@ -22,7 +22,8 @@
     </div>
     <div class="body">
       <div class="container">
-        <form method="post" action="<%= process.env.BASE_URL %>/editor">
+
+        <form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+locals.file %>?_method=<%= locals._method%>">
           <input type="hidden" name="_method" value="<%= locals._method%>" />
           <div style="font-family:monospace;">
             <textarea name="dat"><%= locals.dat %></textarea>
