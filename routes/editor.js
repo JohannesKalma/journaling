@@ -52,6 +52,7 @@ router.get('*',function(req,res,next){
 
 router.post('/',function(req,res,next){
   //save new file
+  console.log('newwwwwwwwwxxxxxxxxx');
   let date = require('date-and-time');
   let now = new Date();
   res.documentId = date.format(now,'YYYYMMDD-HHmmss')+'.md';
@@ -60,6 +61,7 @@ router.post('/',function(req,res,next){
 
 router.post('/:id',function(req,res,next){
   //update file
+  console.log('updatexxxxxxxxx');
   res.documentId = req.params.id;
   next();
 })
