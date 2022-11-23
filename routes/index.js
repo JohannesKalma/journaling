@@ -24,24 +24,24 @@ let docPath=__dirname + '/../documents';
 /* GET - home page, show list of recipees */
 router.get('/', function(req, res, next) {
 
-  console.log(req.access_granted);
+  //console.log(req.access_granted);
   let files = fs.readdirSync(docPath);
   files.reverse;
-  let docArr = [];
+  let documentHeaders = [];
   
   files.forEach(file => {
     if (file.match('^[0-9]{8}-[0-9]{5}')){
-      let dat=fs.readFileSync(docPath+'/'+file,'utf8');
-      dat=matter(dat);
+      let fileContent=fs.readFileSync(docPath+'/'+file,'utf8');
+      let document=matter(fileContent);
 
-      let docLine = {};
-      docLine.file=file;
-      docLine.title=dat.data.Title;
-      docArr.push(docLine);
+      let documentHeader = {};
+      documentHeader.file = file;
+      documentHeader.data = document.data;
+      documentHeaders.push(documentHeader);
     } 
   });
-
-  res.render('index',{content:docArr,access_granted:res.access_granted,title:'Journal Johannes'});
+  console.log(documentHeaders);
+  res.render('index',{documentHeaders:documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
 });
 
 /* GET - single recipe. */

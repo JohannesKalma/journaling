@@ -6,7 +6,6 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
     <div>
 
     <% if (access_granted===true ) { %>
@@ -17,12 +16,13 @@
   </div>
     <hr>
     <ul>
-    <% for(var i=0; i<content.length; i++) { %>
-        <li><a href="./<%- content[i].file %>""><%- content[i].title %></a></li>
+    <% for(var i=0; i<documentHeaders.length; i++) { %>
+        <li><a href="./<%- documentHeaders[i].file %>""><%- documentHeaders[i].data.Title %></a><br>
+          <%- documentHeaders[i].data.Description %><br>
+          <%- documentHeaders[i].data.Author %><br>
+          <%- documentHeaders[i].data.Date %>
+        </li>
     <% } %>
     </ul>
   </body>
 </html>
-
-
-
