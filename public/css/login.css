@@ -123,14 +123,14 @@
     background-repeat: no-repeat;
   }
   form .input-field:nth-child(1)::before {
-    background-image: url(/images/user-icon.png);
+    background-image: url(../images/user-icon.png);
     width: 20px;
     height: 20px;
     top: 20px;
     filter: opacity(0.85);
   }
   form .input-field:nth-child(2)::before {
-    background-image: url(/images/lock-icon.png);
+    background-image: url(../images/lock-icon.png);
     width: 19px;
     height: 19px;
     top: 21px;
