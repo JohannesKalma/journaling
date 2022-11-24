@@ -1,12 +1,44 @@
-<% if ( locals.message ) { %>
-<div class="message"><%- message %></div>
-<% } %>
-<div><a href="./">Home</a>
-<% if ( access_granted===true ) { %>
-     | <a href="./editor/<%- file %>">Edit</a>
-<% } %>
- | <a href="./login">Login</a>
-</div>
-<h1><%- data.Title %></h1>
+<!DOCTYPE html>
+<html>
 
-<p><%- content %></p>
+<head>
+    <title>
+        <%= data.Title %>
+    </title>
+    <!--<link rel='stylesheet' href='/css/style.css' />-->
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/normalize.css' />
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/elements.css'>
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/typography.css'>
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/form.css'>
+    <!--<link rel='stylesheet' href='./css/grid-2867.css'>-->
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/grid.css'>
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/util.css'>
+    
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/style.css' />
+</head>
+
+<body>
+    <section class="container">
+
+        <% if ( locals.message ) { %>
+            <div class="message">
+                <%- message %>
+            </div>
+            <% } %>
+                <div><a href="./">Home</a>
+                    <% if ( access_granted===true ) { %>
+                        | <a href="./editor/<%- file %>">Edit</a>
+                        <% } %>
+                            | <a href="./login">Login</a>
+                </div>
+                <h1>
+                    <%- data.Title %>
+                </h1>
+
+                <p>
+                    <%- content %>
+                </p>
+    </section>
+</body>
+
+</html>

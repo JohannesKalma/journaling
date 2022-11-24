@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <!--<link rel='stylesheet' href='/css/style.css' />-->
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/normalize.css' />
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/elements.css'>
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/typography.css'>
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/form.css'>
+  <!--<link rel='stylesheet' href='./css/grid-2867.css'>-->
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/grid.css'>
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/util.css'>
+  
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/style.css' />
+</head>
+
+<body>
+  <section class="container">
+    <h1>
+      <%= title %>
+    </h1>
     <div>
 
-    <% if (access_granted===true ) { %>
-      <a href="./editor">New</a>
-      <% } else { %>
-        New
-    <% } %>
-    | <a href="./Login">Login</a>
-  </div>
+      <% if (access_granted===true ) { %>
+        <a href="./editor">New</a>
+        <% } else { %>
+          New
+          <% } %>
+            | <a href="./Login">Login</a>
+    </div>
     <hr>
     <ul>
-    <% for(var i=0; i<documentHeaders.length; i++) { %>
+      <% for(var i=0; i<documentHeaders.length; i++) { %>
         <li><a href="./<%- documentHeaders[i].file %>""><%- documentHeaders[i].data.Title %></a><br>
           <%- documentHeaders[i].data.Description %><br>
           <%- documentHeaders[i].data.Author %><br>
@@ -25,5 +41,6 @@
         </li>
     <% } %>
     </ul>
+  </section>
   </body>
 </html>
