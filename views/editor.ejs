@@ -13,11 +13,6 @@
     <div class="metadata">
       <div class="container">
             Editor
-            <!--title<br>
-            description<br>
-            uri<br>
-            createData<br>
-            updateDate<br>-->
       </div>
     </div>
     <div class="body">
@@ -25,9 +20,13 @@
 
         <form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+locals.file %>?_method=<%= locals._method%>">
           <input type="hidden" name="_method" value="<%= locals._method%>" />
+          <input type="text" name="Title" value="<%= locals.document.data.Title %>" />
+          <input type="text" name="Description" value="<%= locals.document.data.Description %>" />
+
           <div style="font-family:monospace;">
-            <textarea name="dat"><%= locals.dat %></textarea>
+            <textarea name="content"><%= locals.document.content %></textarea>
           </div>
+
           <button>save</button>
         </form>
       </div>

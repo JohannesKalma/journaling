@@ -1,11 +1,12 @@
 <% if ( locals.message ) { %>
 <div class="message"><%- message %></div>
 <% } %>
-<div><a href="./">home</a></div>
+<div><a href="./">Home</a>
 <% if ( access_granted===true ) { %>
-    <div> | <a href="./editor/<%- file %>">Edit</a></div>
+     | <a href="./editor/<%- file %>">Edit</a>
 <% } %>
-
+ | <a href="./login">Login</a>
+</div>
 <h1><%- data.Title %></h1>
 
 <p><%- content %></p>

@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser')
+var matter = require('gray-matter');
 var methodOverride = require('method-override')
 var router = express.Router();
 let fs = require('fs');
@@ -50,7 +51,8 @@ router.get('/:id',function(req,res,next){
 
 router.get('*',function(req,res,next){
   let document = fs.readFileSync(res.documentPath,'utf-8');
-  res.render('editor',{dat:document,_method:res._method,file:res._file});
+  doc = matter(document);
+  res.render('editor',{document:doc,_method:res._method,file:res._file});
 });
 
 //router.use(bodyParser.urlencoded());
@@ -80,9 +82,21 @@ router.put('/:id',function(req,res,next){
   next();
 })
 
+function reqBodyToMarkdown(b){
+  const data = {};
+    data.Title = b.Title;
+    data.Description = b.Description;
+    data.Author = 'Johannes Kalma';
+    data.Date = new Date().toString();
+  const obj = {}
+    obj.data = data;
+    obj.content= b.content;
+  return matter.stringify(obj);
+}
+
 router.all('*',function(req,res,next){
   res.documentPath = __dirname + '/../documents/'+res.documentId;
-  fs.writeFileSync(res.documentPath,req.body.dat);
+  fs.writeFileSync(res.documentPath,reqBodyToMarkdown(req.body));
   res.redirect(process.env.BASE_URL+'/'+res.documentId);
 })
 
