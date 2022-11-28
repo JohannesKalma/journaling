@@ -115,13 +115,13 @@
     font-size: 20px;
     position: absolute;
     left: 15px;
-    //top: 20px;
     color: #888888;
     content: " ";
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
   }
+
   form .input-field:nth-child(1)::before {
     background-image: url(../images/user-icon.png);
     width: 20px;
