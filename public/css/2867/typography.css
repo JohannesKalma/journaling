@@ -1,7 +1,7 @@
 /*!
- * Materialize v1.0.0 (http://materializecss.com)
- * Copyright 2014-2017 Materialize
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ * Typography 2867
+ * Based on Materialize v1.0.0 (http://materializecss.com)
+ * Author: Johannes Kalma
 */
 
 html {
@@ -13,19 +13,19 @@ html {
 
 @media only screen and (min-width: 0) {
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 
