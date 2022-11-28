@@ -2,15 +2,33 @@ body{
     margin:0px;
 }
 
-.container{
-  width: 65%;
-  margin: 0 auto;
-  padding: 2em 0; 
+@media only screen and (min-width: 0) {
+  .container{
+    width: 98%;
+    margin: 0 auto;
+    padding: 1em 0; 
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container{
+    width: 65%;
+    margin: 0 auto;
+    padding: 2em 0; 
+  }
+}  
+
+
+@media only screen and (min-width: 1200px) {
+  .container{
+    width: 65%;
+    margin: 0 auto;
+    padding: 2em 0; 
+  }
 }
 
 .metadata{  
   background-color: #949494;
-  
 }  
 
 textarea{
