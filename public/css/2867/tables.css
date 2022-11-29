@@ -25,7 +25,7 @@ tr {
 always striped
 */
 tbody > tr:nth-child(even) {
-  background-color: rgba(242, 242, 242, 0.5);
+  background-color: rgb(229, 229, 229);
 }
 
 table.striped > tbody > tr > td {
@@ -61,12 +61,12 @@ tr:last-child {
 
 /*johannes*/
 th{
-  color:white;
-  background-color: rgba(178,178,178, 1);
+  color: rgb(227,227,227);
+  background-color: rgb(108,108,108);
 }
 
 td, th {
-  padding: 15px 5px;
+  padding: 8px 16px;
   display: table-cell;
   text-align: left;
   vertical-align: middle;

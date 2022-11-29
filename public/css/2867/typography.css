@@ -110,4 +110,5 @@ big {
 
 code, kbd, pre, samp {
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    font-size: 0.75rem;
 }
