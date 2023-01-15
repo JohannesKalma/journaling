@@ -33,7 +33,7 @@ router.get('/', async function(req, res, next) {
 router.post('/', async function(req, res, next) {
     console.log(req.body);
     const rtj = new realtimeJournaling({
-        content: "ccccc"
+        content: req.body.content
     });
     await rtj.save();
 
