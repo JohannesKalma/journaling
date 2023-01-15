@@ -27,3 +27,5 @@ router.post('/', function(req, res, next) {
 router.all('*',function(req,res,next){
     res.render('realtime',{access_granted:res.access_granted});
 });
+
+module.exports = router;
