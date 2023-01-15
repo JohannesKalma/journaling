@@ -8,7 +8,8 @@ let createError = require('http-errors');
 let md = require('markdown-it')(
   {html: true,
    linkify: true,
-   typographer: true
+   typographer: true,
+   breaks:true
   });
 
 router.use(function(req,res,next){
