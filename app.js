@@ -9,6 +9,7 @@ require('dotenv').config()
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var editorRouter = require('./routes/editor');
+var realtimeRouter = require('./routes/realtime');
 
 var app = express();
 
@@ -23,8 +24,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/editor', editorRouter);
 app.use('/login', loginRouter);
+app.use('/realtime',realtimeRouter);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
