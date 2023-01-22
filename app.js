@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var expressLayouts = require('express-ejs-layouts');
 
 require('dotenv').config()
 
@@ -24,9 +25,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use('/editor', editorRouter);
 app.use('/login', loginRouter);
+app.use('/editor', editorRouter);
+
+/* login should not render with layouts */
+/* the rest should */
+app.use(expressLayouts);
+
 app.use('/realtime',realtimeRouter);
 app.use('/', indexRouter);
 

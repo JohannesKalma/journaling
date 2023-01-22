@@ -1,25 +1,21 @@
 /*=============================
-  Grid
+  2867 grid based on flex
 =============================*/
-/*original
-  .container {
-    width: 80%;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-*/
+/* default is mobile. 'mobile first' */
   .container {
     margin: 0 auto;
     max-width:800px;
     width: 90%;
   }
   
+/* any screen larger than 600 px (and smaller than 992 px */  
   @media only screen and (min-width: 601px) {
     .container {
       width: 85%;
     }
   }
-  
+
+/* desktop displays - larger than 992 px */  
   @media only screen and (min-width: 993px) {
     .container {
       width: 70%;

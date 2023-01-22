@@ -42,7 +42,7 @@ router.post('/', async function(req, res, next) {
 
 router.all('*',function(req,res,next){
     realtimeJournaling.find({}).sort({createdAt:-1,_id:-1}).exec (function(err,dat){ 
-       res.render('realtime',{access_granted:res.access_granted,data:dat});
+       res.render('realtime',{access_granted:res.access_granted,data:dat,title:'realtime'});
     })
 });
 

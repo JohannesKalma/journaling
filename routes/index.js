@@ -41,7 +41,6 @@ router.get('/', function(req, res, next) {
       documentHeaders.push(documentHeader);
     } 
   });
-  console.log(documentHeaders);
   res.render('index',{documentHeaders:documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
 });
 
@@ -55,7 +54,7 @@ router.get('/:i',function(req, res, next) {
     //try {
       let fileContent=fs.readFileSync(docPath+'/'+req.params.i,'utf8');
       dat=matter(fileContent);
-      res.render('single',{file: req.params.i,data:dat.data,content: md.render(dat.content),access_granted:res.access_granted});
+      res.render('single',{file: req.params.i, data:dat.data, content: md.render(dat.content), access_granted:res.access_granted,title:dat.data.title});
     //}
     //catch (err){
     //  next(createError(404));
