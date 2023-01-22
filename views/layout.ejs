@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>
-    <%= title %>
+    Journaling Johannes Kalma
   </title>
   <!-- theme 2867 styling-->
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/normalize.css' />
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/elements.css'>
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/typography.css'>
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/form.css'>
+  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/nav.css'>
+
   <!--<link rel='stylesheet' href='./css/grid-2867.css'>-->
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/grid.css'>
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/util.css'>
@@ -21,6 +23,12 @@
 </head>
 
 <body>
+  
+  <nav>
+    <section class="container">
+      <a href="./">Home</a> <a href="./login">Login</a> <a href="./realtime">Realtime</a>
+    </section>
+  </nav>
   <section class="container">
   <%- body%>
   </section>

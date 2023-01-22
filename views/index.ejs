@@ -2,15 +2,6 @@
     <h1>
       <%= title %>
     </h1>
-    <div>
-
-      <% if (access_granted===true ) { %>
-        <a href="./editor">New</a>
-        <% } else { %>
-          New
-          <% } %>
-            | <a href="./Login">Login</a>
-    </div>
     <hr>
     <ul class="frontpage">
       <% for(var i=0; i<documentHeaders.length; i++) { %>

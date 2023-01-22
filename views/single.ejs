@@ -1,48 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<% if ( locals.message ) { %>
+    <div class="message">
+        <%- message %>
+    </div>
+<% } %>
 
-    <title>
-        <%= data.Title %>
-    </title>
-  <!-- theme 2867 styling-->
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/normalize.css' />
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/elements.css'>
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/typography.css'>
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/form.css'>
-  <!--<link rel='stylesheet' href='./css/grid-2867.css'>-->
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/grid.css'>
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/util.css'>
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/tables.css'>
+<h1>
+    <%- data.Title %>
+</h1>
 
-  <!-- local styling-->
-  <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/style.css' />
-</head>
+<div>
+    <% if ( access_granted===true ) { %>
+        <a href="./editor/<%- file %>">Edit</a>
+    <% } %>
+</div>
 
-<body>
-    <section class="container">
-
-        <% if ( locals.message ) { %>
-            <div class="message">
-                <%- message %>
-            </div>
-            <% } %>
-                <div><a href="./">Home</a>
-                    <% if ( access_granted===true ) { %>
-                        | <a href="./editor/<%- file %>">Edit</a>
-                        <% } %>
-                            | <a href="./login">Login</a>
-                </div>
-                <h1>
-                    <%- data.Title %>
-                </h1>
-
-                <p>
-                    <%- content %>
-                </p>
-    </section>
-</body>
-
-</html>
+<p>
+    <%- content %>
+</p>
