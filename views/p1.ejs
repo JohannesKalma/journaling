@@ -1,3 +1,16 @@
 <p>
     <%- value %> Watt
 </p>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+async function getData() {
+try {
+    const response = await axios.get('./p1/api');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+getData();  
+</script>
