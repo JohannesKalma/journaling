@@ -11,6 +11,8 @@ var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var editorRouter = require('./routes/editor');
 var realtimeRouter = require('./routes/realtime');
+var p1Router = require('./routes/p1');
+
 
 var app = express();
 
@@ -33,6 +35,8 @@ app.use('/editor', editorRouter);
 app.use(expressLayouts);
 
 app.use('/realtime',realtimeRouter);
+app.use('/p1',p1Router);
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
