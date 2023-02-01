@@ -20,14 +20,14 @@ router.get('/', async function(req, res, next) {
     let val;
     try {
         const response = await axios.get('http://eyowv23r7po2py16.myfritz.net:10180/api/v1/smartmeter?limit=1&json=object');
-        val=response.data[0].CONSUMPTION_W;
+        val=response.data[0];
         console.log(val);
     } catch (error) {
         console.error(error);
         val='error';
       }
 
-      res.render('p1',{value:val});
+      res.render('p1',{data:val});
 });
 
 module.exports = router;
