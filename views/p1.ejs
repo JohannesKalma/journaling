@@ -10,7 +10,7 @@
 async function getData() {
 try {
     const response = await axios.get('./p1/api');
-    document.querySelector('Watt').innerHTML=resonse.CONSUMPTION_W;
+    document.getElementById('Watt').innerHTML=response.CONSUMPTION_W;
     console.log(response);
   } catch (error) {
     console.error(error);
