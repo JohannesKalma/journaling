@@ -11,10 +11,13 @@ async function getData() {
 try {
     const response = await axios.get('./p1/api');
     document.getElementById('Watt').innerHTML=response.data.CONSUMPTION_W;
-    console.log(response.data);
+    //console.log(response.data);
   } catch (error) {
     console.error(error);
   }
 }
 getData();
+setTimeout(function(){
+   getData();
+}, 5000);
 </script>
