@@ -1,23 +1,43 @@
 <p>
-    <%- data.CONSUMPTION_W %> Watt
+  </span><span id="watt"></span>&nbsp;<span>watt</span>
 </p>
+
 <p>
-  <div id="Watt"></div>
+  <span id="kwh"></span>&nbsp;<span>kWh</span>
 </p>
+
+<p>
+  <span id="m3"></span>&nbsp;<span>m<sup>3</sup></span>
+</p>
+
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 async function getData() {
-try {
-    const response = await axios.get('./p1/api');
-    document.getElementById('Watt').innerHTML=response.data.CONSUMPTION_W;
+  try {
+    let endpoints = [
+    './p1/api/current',
+    './p1/api/day'
+  ];
+
+  Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(([{data: current}, {data: day}] )=> {
+        console.log({ current, day });
+        document.getElementById('watt').innerHTML=current.CONSUMPTION_W;
+        document.getElementById('kwh').innerHTML=day.CONSUMPTION_DELTA_KWH.toFixed(1);
+        document.getElementById('m3').innerHTML=day.CONSUMPTION_GAS_DELTA_M3.toFixed(1);
+
+      });
+
+
+    //const response = await axios.get('./p1/api/current');
+    
     //console.log(response.data);
   } catch (error) {
     console.error(error);
   }
 }
 getData();
-setTimeout(function(){
+setInterval(function(){
    getData();
-}, 5000);
+}, 10000);
 </script>
