@@ -6,12 +6,3 @@
 <!-- @import "grid-2867.css";-->
 @import "grid.css";
 @import "util.css";
-
-
-
-
-
-<link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/2867.css'>
-
-<!-- local styling-->
-<link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/style.css' />
