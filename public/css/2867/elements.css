@@ -2,8 +2,6 @@
 # Elements from underscores and materializecss
 --------------------------------------------------------------*/
 
-/* start global styling */
-/* border-box: Include padding and border in the element's total width and height */
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -12,16 +10,12 @@ html {
 *,
 *:before,
 *:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 body {
-	//background: #fff;
       background: #f6f6f6;
-  //background: #4e4e4e;
-	/* Fallback for when there is no custom background color defined. */
 }
 
 /*--------------------------------------------------------------

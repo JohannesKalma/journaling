@@ -59,7 +59,6 @@ tr:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/*johannes*/
 th{
   color: rgb(227,227,227);
   background-color: rgb(108,108,108);
@@ -70,7 +69,6 @@ td, th {
   display: table-cell;
   text-align: left;
   vertical-align: middle;
-  //border-radius: 2px;
 }
 
 @media only screen and (max-width: 992px) {
