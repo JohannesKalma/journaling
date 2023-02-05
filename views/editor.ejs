@@ -16,7 +16,7 @@
   <body>
     <div class="metadata">
       <div class="container">
-            Editor
+            Editor - shitty styling
       </div>
     </div>
     <div class="body">
@@ -24,9 +24,17 @@
 
         <form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+data._id %>?_method=<%= _method%>">
           <input type="hidden" name="_method" value="<%= _method%>" />
-          <input type="text" name="Title" value="<%= data.title %>" />
-          <input type="text" name="Description" value="<%= data.description %>" />
-
+          <div class="header">
+            <div class="header_row">
+                <label for="a">Title</label>
+                <input type="text" name="Title" value="<%= data.title %>" />
+            </div>
+          
+            <div class="header_row">
+                <label for="b">Short description</label>
+                <input type="text" name="Description" value="<%= data.description %>" />
+            </div>
+        </div>
           <div style="font-family:monospace;">
             <textarea name="content"><%= data.content %></textarea>
           </div>
