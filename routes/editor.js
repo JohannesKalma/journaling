@@ -46,30 +46,25 @@ router.use(function(req,res,next){
 
 router.get('/',function(req,res,next){ 
   res._method='POST';
-  let data = {};
-  data.title='New document';
+  let data = {
+    title:'New document',
+  };
   res.render('editor',{data,_method:'POST'});
 });
 
 router.get('/:id',async function(req,res,next){
-  var d = await Model.findOne({_id:req.params.id});
-  res.render('editor',{data:d,_method:'PUT'});
+  var data = await Model.findOne({_id:req.params.id});
+  res.render('editor',{data,_method:'PUT'});
 });
 
 router.use(methodOverride('_method'));
 
 router.post('/',async function(req,res,next){
-  //save new file
-  let doc={};
-  doc['title']=req.body.Title;
-  doc['description']=req.body.Description;
-  doc['content']=req.body.content;
   var model = new Model({
     title:req.body.Title,
     description:req.body.Description,
     content:req.body.content
   });
-  
   let result = await model.save();
   res.redirect(process.env.BASE_URL+'/'+result._id.valueOf());
 })

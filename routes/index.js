@@ -38,22 +38,23 @@ router.get('/', async function(req, res, next) {
   /* mongo getter*/  
   var mongodocs = await model.find();
   for (doc of mongodocs){
-    let documentHeader = {};
-    let data = {};
-    documentHeader.id=doc._id;
-    data.Title=doc.title;
-    data.Description = doc.description;
-    data.Author = doc.author;
-    data.Date = doc.createdAt;
-    documentHeader.data=data;
+    let documentHeader = {
+      id : doc._id,
+      data : {
+        Title : doc.title,
+        Description : doc.description,
+        Author : doc.author,
+        Date : doc.createdAt,
+      },
+    };
     documentHeaders.push(documentHeader);
   }
-  res.render('index',{documentHeaders:documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
+  res.render('index',{documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
 });
 
 router.get('/:i',async function(req, res, next) {
-      var d = await model.findById(req.params.i);
-      res.render('single',{data:d, renderedContent: md.render(d.content), access_granted:res.access_granted,title:d.title});
+      var data = await model.findById(req.params.i);
+      res.render('single',{data, renderedContent: md.render(data.content), access_granted:res.access_granted,title:data.title});
 })
 
 module.exports = router;
