@@ -9,7 +9,7 @@ const realtimeJournaling = require("../models/realtime") // new
 
 async function connectMongo() {
     await mongoose.set("strictQuery", false);
-    await mongoose.connect('mongodb://127.0.0.1:27017/rtj');
+    //await mongoose.connect('mongodb://127.0.0.1:27017/rtj');
     const db = await mongoose.connection;
     db.on("error", console.error.bind(console, "MongoDB connection error:"));
 }

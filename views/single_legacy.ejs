@@ -5,15 +5,15 @@
 <% } %>
 
 <h1>
-    <%= data.title %>
+    <%- data.Title %>
 </h1>
 
 <div>
     <% if ( access_granted===true ) { %>
-        <a href="<%= process.env.BASE_URL %>/editor/<%= data._id %>">Edit</a>
+        <a href="<%= process.env.BASE_URL %>/editor/legacy/<%- file %>">Edit</a>
     <% } %>
 </div>
 
 <p>
-    <%- renderedContent %>
+    <%- content %>
 </p>

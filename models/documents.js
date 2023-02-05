@@ -1,12 +1,21 @@
 const mongoose = require("mongoose")
 
 const RtSchema = mongoose.Schema({
-        title: String,
+        title: { type:String, required:true},
         description: String,
-	    content: String
+        author: {type: String, default:'Johannes Kalma'},
+	    content: { type:String, required:true},
+        docType: { type: String,
+                   enum: ['recipe','document','collection'],
+                   default: 'document'
+                 },
+        legacy: {filename: {type: String, 
+                            index: { unique: true, sparse: true }},
+                 header: String
+                },
     },
     {
         timestamps: true,
     })
 
-module.exports = mongoose.model("documents", RtSchema)
+module.exports = mongoose.model("documents", RtSchema);
