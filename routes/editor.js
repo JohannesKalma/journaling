@@ -53,11 +53,9 @@ router.get('/',function(req,res,next){
 
 router.get('/:id',async function(req,res,next){
   var d = await Model.findOne({_id:req.params.id});
-  //console.log(d);
   res.render('editor',{data:d,_method:'PUT'});
 });
 
-//router.use(bodyParser.urlencoded());
 router.use(methodOverride('_method'));
 
 router.post('/',async function(req,res,next){
@@ -73,14 +71,10 @@ router.post('/',async function(req,res,next){
   });
   
   let result = await model.save();
-  //console.log(result);
   res.redirect(process.env.BASE_URL+'/'+result._id.valueOf());
 })
 
 router.put('/:id', async function(req,res,next){
-  console.log('johannes');
-  console.log(req.params.id);
-  console.log(req.body);
   await Model.findByIdAndUpdate(req.params.id,{
     title:req.body.Title,
     description:req.body.Description,

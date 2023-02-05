@@ -53,7 +53,6 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:i',async function(req, res, next) {
       var d = await model.findById(req.params.i);
-      //console.log(d._id.valueOf());
       res.render('single',{data:d, renderedContent: md.render(d.content), access_granted:res.access_granted,title:d.title});
 })
 
