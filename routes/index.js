@@ -34,7 +34,7 @@ router.use(function(req,res,next){
 /* GET - home page, show list of recipees */
 router.get('/', async function(req, res, next) {
   let documentHeaders = [];
-  
+   
   /* mongo getter*/  
   var mongodocs = await model.find();
   for (doc of mongodocs){
@@ -55,6 +55,6 @@ router.get('/', async function(req, res, next) {
 router.get('/:i',async function(req, res, next) {
       var data = await model.findById(req.params.i);
       res.render('single',{data, renderedContent: md.render(data.content), access_granted:res.access_granted,title:data.title});
-})
+}); 
 
 module.exports = router;
