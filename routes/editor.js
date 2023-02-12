@@ -47,7 +47,6 @@ router.use(function(req,res,next){
 router.get('/',function(req,res,next){ 
   res._method='POST';
   let data = {
-    title:'New document',
   };
   res.render('editor',{data,_method:'POST'});
 });
