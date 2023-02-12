@@ -2,27 +2,22 @@ body{
     margin:0px;
 }
 
-@media only screen and (min-width: 0) {
-  .container{
+.container{
     width: 98%;
     margin: 0 auto;
     padding: 1em 0; 
-  }
 }
 
 @media only screen and (min-width: 992px) {
   .container{
     width: 65%;
-    margin: 0 auto;
     padding: 2em 0; 
   }
 }  
 
-
 @media only screen and (min-width: 1200px) {
   .container{
     width: 65%;
-    margin: 0 auto;
     padding: 2em 0; 
   }
 }
@@ -43,11 +38,8 @@ textarea{
 }
 
 form .header { display: table;      }
-form .header_row  { display: table-row;  }
 
-form .header_container {
-  //
-}
+form .header_row  { display: table-row;  }
 
 form label  { 
   display: table-cell;

@@ -61,8 +61,8 @@ router.use(methodOverride('_method'));
 
 router.post('/',async function(req,res,next){
   var model = new Model({
-    title:req.body.Title,
-    description:req.body.Description,
+    title:req.body.title,
+    description:req.body.description,
     content:req.body.content
   });
   let result = await model.save();
@@ -71,8 +71,8 @@ router.post('/',async function(req,res,next){
 
 router.put('/:id', async function(req,res,next){
   await Model.findByIdAndUpdate(req.params.id,{
-    title:req.body.Title,
-    description:req.body.Description,
+    title:req.body.title,
+    description:req.body.description,
     content:req.body.content
   });
   res.redirect(process.env.BASE_URL+'/'+req.params.id);

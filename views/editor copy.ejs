@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      <% if (data.title) { %>
+         <%= data.title %>
+      <% } else {%>
+         new document
+      <% } %>
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/editor.css' />
+  </head>
+  <body>
+    <div class="metadata">
+      <div class="container">
+            Editor - shitty styling
+      </div>
+    </div>
+    <div class="body">
+      <div class="container">
+
+        <form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+data._id %>?_method=<%= _method%>">
+          <input type="hidden" name="_method" value="<%= _method%>" />
+          <div class="header">
+            <div class="header_row">
+                <label for="a">Title</label>
+                <input type="text" name="Title" value="<%= data.title %>" />
+            </div>
+          
+            <div class="header_row">
+                <label for="b">Short description</label>
+                <input type="text" name="Description" value="<%= data.description %>" />
+            </div>
+
+          </div>
+          <div style="font-family:monospace;">
+            <textarea name="content"><%= data.content %></textarea>
+          </div>
+
+          <button>save</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script>
+       const easyMDE = new EasyMDE();
+    </script>
+  </body>
+</html>

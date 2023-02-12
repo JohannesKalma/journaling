@@ -1,6 +1,5 @@
 input[type=text], select, textarea {
-    border-radius: 5px;
-    border-width: 1px;
+    border-width: 0 0 1px 0;
     border-color: rgb(200,200,200);
     border-style:solid;
     height:3rem;
@@ -11,8 +10,13 @@ input[type=text], select, textarea {
     padding:1rem;
 }
 
+input[type=text]:focus {
+    outline: none;
+    border-color: rgb(181, 20, 20);
+}
+
 input[type=submit]{
-    background-color: #04AA6D;
+    background-color: rgb(74 74 74);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -21,7 +25,7 @@ input[type=submit]{
 }
 
 input[type=submit]:hover{
-    background-color: #45a049;
+    background-color: rgb(95, 94, 94);
 }
 
 
