@@ -6,7 +6,6 @@ let jwt = require('jsonwebtoken');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log(req.body);
   res.render('login');
 });
 

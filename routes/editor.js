@@ -70,14 +70,12 @@ router.post('/',async function(req,res,next){
 })
 
 router.put('/:id', async function(req,res,next){
-  console.log(req.body);
   let result = await Model.findByIdAndUpdate(req.params.id,{
     title:req.body.title,
     description:req.body.description,
     content:req.body.content,
     journalType:req.body.journalType
   });
-  console.log(result);
   res.redirect(process.env.BASE_URL+'/'+req.params.id);
 });
 
