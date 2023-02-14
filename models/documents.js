@@ -9,6 +9,7 @@ const RtSchema = mongoose.Schema({
                    enum: ['recipe','document','collection'],
                    default: 'document'
                  },
+        journalType: {type: String}, 
         legacy: {filename: {type: String, 
                             index: { unique: true, sparse: true }},
                  header: String

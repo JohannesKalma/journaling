@@ -12,7 +12,7 @@ var loginRouter = require('./routes/login');
 var editorRouter = require('./routes/editor');
 var realtimeRouter = require('./routes/realtime');
 var p1Router = require('./routes/p1');
-
+var journaltypeRouter = require('./routes/journaltype');
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(expressLayouts);
 app.use('/editor', editorRouter);
 app.use('/realtime',realtimeRouter);
 app.use('/p1',p1Router);
-
+app.use('/journaltype',journaltypeRouter)
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
@@ -50,7 +50,7 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+ 
   // render the error page
   res.status(err.status || 500);
   res.render('error');

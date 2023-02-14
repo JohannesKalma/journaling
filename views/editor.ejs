@@ -20,13 +20,25 @@
 
   <div class="header">
     <div class="header_row">
-        <label for="a">Title</label>
-        <input type="text" name="title" value="<%= data.title %>" required/>
+        <label for="formTitle">Title</label>
+        <input type="text" id="formTitle" name="title" value="<%= data.title %>" required/>
     </div>
   
     <div class="header_row">
-        <label for="b">Short description</label>
-        <input type="text" name="description" value="<%= data.description %>" required/>
+        <label for="formDescription">Short description</label>
+        <input type="text" id="fromDescription" name="description" value="<%= data.description %>" required/>
+    </div>
+
+    <div class="header_row">
+      <label for="formJournaltype">Journal type</label>
+      <input type="text" list="chocoladevla" id="formJournaltype" name="journalType" value="<%= data.journalType %>" >
+    
+      <datalist id="chocoladevla">
+          <option value="Werk">
+          <option value="My Mind">
+          <option value="Generic">
+          <option value="Chocolade Vla">
+      </datalist>
     </div>
   </div>
 
