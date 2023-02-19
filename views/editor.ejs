@@ -14,8 +14,8 @@
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
-      
-<form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+data._id %>?_method=<%= _method%>">
+
+<form method="POST" action="<%= process.env.BASE_URL %>/editor<%- locals._method=='POST' ? '' : '/'+data._id %>?_method=<%= _method%>" autocomplete="off">
   <input type="hidden" name="_method" value="<%= _method%>" />
 
   <div class="header">
@@ -31,13 +31,11 @@
 
     <div class="header_row">
       <label for="formJournaltype">Journal type</label>
-      <input type="text" list="chocoladevla" id="formJournaltype" name="journalType" value="<%= data.journalType %>" >
-    
-      <datalist id="chocoladevla">
-          <option value="Werk">
-          <option value="My Mind">
-          <option value="Generic">
-          <option value="Chocolade Vla">
+      <input type="text" list="journalType" id="item" name="journalType" value="<%= data.journalType %>" >
+      <datalist id="journalType">
+        <% selectList.forEach(function(item){ %>
+          <option value="<%= item %>" />
+        <% }) %>
       </datalist>
     </div>
   </div>

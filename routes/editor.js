@@ -44,16 +44,21 @@ router.use(function(req,res,next){
   res.render('login',{return_page:'editor'});
 });
 
-router.get('/',function(req,res,next){ 
-  res._method='POST';
-  let data = {
-  };
-  res.render('editor',{data,_method:'POST'});
+async function getSelectList(){
+  let list = await Model.find().distinct("journalType");
+  return list;
+}
+
+router.get('/',async function(req,res,next){ 
+  let data = {};
+  getSelectList();
+  res.render('editor',{data, _method:'POST', selectList: await getSelectList()});
 });
 
 router.get('/:id',async function(req,res,next){
   var data = await Model.findOne({_id:req.params.id});
-  res.render('editor',{data,_method:'PUT'});
+  getSelectList();
+  res.render('editor',{data, _method:'PUT', selectList:await getSelectList()});
 });
 
 router.use(methodOverride('_method'));

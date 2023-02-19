@@ -1,4 +1,4 @@
-input[type=text], select, textarea {
+input, select, textarea {
     border-radius: 5px;
     border-width: 1px;
     border-color: rgb(200,200,200);
