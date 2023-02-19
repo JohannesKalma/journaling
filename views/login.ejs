@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,10 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="https://example.com/image.svg">
 
   <title>Login Form</title>
-  <!--<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>-->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
   <link rel="stylesheet" href="<%= process.env.BASE_URL %>/css/login.css">
 </head>
-<body>
+<body>-->
 <!-- partial:index.partial.html -->
 <div class="login-form">
 
@@ -30,15 +30,17 @@
            <%= locals.message %>
         </div>
      <% } %>
-      <a href="#" class="link">Forgot Your Password?</a>
+      <!--<a href="#" class="link">Forgot Your Password?</a>-->
     </div>
     <div class="action">
       <button>Register</button>
       <button>Sign in</button>
+      <input type="submit" value="Sign in" />
     </div>
   </form>
 </div>
 <!-- partial -->
-  <script  src="<%= process.env.BASE_URL %>/js/login.js"></script>
-</body>
-</html>
+<script  src="<%= process.env.BASE_URL %>/js/login.js"></script>
+
+<!--</body>
+</html>-->

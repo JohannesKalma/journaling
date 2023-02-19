@@ -27,13 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/login', loginRouter);
 
-
-/* login should not render with layouts */
-/* the rest should */
 app.use(expressLayouts);
 
+app.use('/login', loginRouter);
 app.use('/editor', editorRouter);
 app.use('/realtime',realtimeRouter);
 app.use('/p1',p1Router);
