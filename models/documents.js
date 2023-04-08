@@ -14,6 +14,7 @@ const RtSchema = mongoose.Schema({
                             index: { unique: true, sparse: true }},
                  header: String
                 },
+        public: {type: Boolean, default:false},
     },
     {
         timestamps: true,

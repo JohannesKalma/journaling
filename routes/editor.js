@@ -68,7 +68,8 @@ router.post('/',async function(req,res,next){
     title:req.body.title,
     description:req.body.description,
     content:req.body.content,
-    journalType:req.body.journalType
+    journalType:req.body.journalType,
+    public:req.body.public
   });
   let result = await model.save();
   res.redirect(process.env.BASE_URL+'/'+result._id.valueOf());
@@ -79,7 +80,8 @@ router.put('/:id', async function(req,res,next){
     title:req.body.title,
     description:req.body.description,
     content:req.body.content,
-    journalType:req.body.journalType
+    journalType:req.body.journalType,
+    public:req.body.public
   });
   res.redirect(process.env.BASE_URL+'/'+req.params.id);
 });

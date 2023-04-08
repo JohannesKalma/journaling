@@ -38,16 +38,19 @@ router.get('/', async function(req, res, next) {
   /* mongo getter*/  
   var mongodocs = await model.find();
   for (doc of mongodocs){
-    let documentHeader = {
-      id : doc._id,
-      data : {
-        Title : doc.title,
-        Description : doc.description,
-        Author : doc.author,
-        Date : doc.createdAt,
-      },
-    };
-    documentHeaders.push(documentHeader);
+    if (doc.public == true || ( res.access_granted == true && doc.public == false ) ) {
+      let documentHeader = {
+        id : doc._id,
+        data : {
+          Title : doc.title,
+          Description : doc.description,
+          Author : doc.author,
+          Date : doc.createdAt,
+          Public : doc.public,
+        },
+      };
+      documentHeaders.push(documentHeader);
+    }
   }
   res.render('index',{documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
 });

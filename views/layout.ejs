@@ -16,8 +16,23 @@
 <body>
   
   <nav>
+<!--
+<%- //JSON.stringify(locals) %>
+-->
+
     <section class="container">
-	    <a href="<%= process.env.BASE_URL %>">Home</a> <a href="<%= process.env.BASE_URL %>/login">Login</a> <a href="<%= process.env.BASE_URL %>/editor">New</a> <!--<a href="./realtime">Realtime</a>-->
+	    <a href="<%= process.env.BASE_URL %>">Home</a>
+            &nbsp;|&nbsp;
+   <% if ( locals.access_granted ) { %>
+   <a href="<%= process.env.BASE_URL %>/login">Logout yy</a> 
+   <% } else { %> 
+   <a href="<%= process.env.BASE_URL %>/login">Login xx</a> 
+   <% } %>
+            &nbsp;|&nbsp;
+            <a href="<%= process.env.BASE_URL %>/editor">New</a> 
+&nbsp;|&nbsp;
+<% if(locals.access_granted) { %><%- access_granted %> <% } %>
+            <!--<a href="./realtime">Realtime</a>-->
     </section>
   </nav>
   <section class="container">

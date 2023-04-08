@@ -5,21 +5,24 @@
     <hr>
     <ul class="frontpage">
       <% for(var i=0; i<documentHeaders.length; i++) { %>
-        <li>
-          <% if ( documentHeaders[i].file != null ) {%>
-            <a href="./legacy/<%- documentHeaders[i].file %>"">
-          <% } else { %>
-            <a href="./<%- documentHeaders[i].id %>"">
-          <% } %>  
+
+          <li>
+            <%- documentHeaders[i].data.public %>    
+            <% if ( documentHeaders[i].file != null ) {%>
+              <a href="./legacy/<%- documentHeaders[i].file %>"">
+            <% } else { %>
+              <a href="./<%- documentHeaders[i].id %>"">
+            <% } %>  
           
-           
-          <%- documentHeaders[i].data.Title %></a> 
-          <% if ( documentHeaders[i].legacy ) {%>
-            &nbsp;<span style="color:red">LEGACY</span>
-          <% } %><br>
-          <%- documentHeaders[i].data.Description %><br>
-          <%- documentHeaders[i].data.Author %><br>
-          <%- documentHeaders[i].data.Date %>
-        </li>
-    <% } %>
+            <%- documentHeaders[i].data.Title %></a> 
+            <% if ( documentHeaders[i].legacy ) {%>
+              &nbsp;<span style="color:red">LEGACY</span>
+            <% } %><br>
+            <%- documentHeaders[i].data.Description %><br>
+            <%- documentHeaders[i].data.Author %><br>
+            <%- documentHeaders[i].data.Date %>
+            <%- documentHeaders[i].data.Public %>
+          </li>
+
+      <% } %>
     </ul>
