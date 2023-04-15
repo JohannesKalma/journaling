@@ -13,6 +13,7 @@ var editorRouter = require('./routes/editor');
 var realtimeRouter = require('./routes/realtime');
 var p1Router = require('./routes/p1');
 var journaltypeRouter = require('./routes/journaltype');
+var rtRouter = require('./routes/rt');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(expressLayouts);
 app.use('/login', loginRouter);
 app.use('/editor', editorRouter);
 app.use('/realtime',realtimeRouter);
+app.use('/rt',rtRouter);
 app.use('/p1',p1Router);
 app.use('/journaltype',journaltypeRouter)
 app.use('/', indexRouter);
