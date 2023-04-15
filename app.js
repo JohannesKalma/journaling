@@ -34,7 +34,7 @@ app.use(expressLayouts);
 app.use('/login', loginRouter);
 app.use('/editor', editorRouter);
 app.use('/realtime',realtimeRouter);
-app.use('/rt',rtRouter);
+//app.use('/rt',rtRouter);
 app.use('/p1',p1Router);
 app.use('/journaltype',journaltypeRouter)
 app.use('/', indexRouter);
