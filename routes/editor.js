@@ -64,6 +64,7 @@ router.get('/:id',async function(req,res,next){
 router.use(methodOverride('_method'));
 
 router.post('/',async function(req,res,next){
+  console.log(req.body);
   var model = new Model({
     title:req.body.title,
     description:req.body.description,
@@ -76,6 +77,7 @@ router.post('/',async function(req,res,next){
 })
 
 router.put('/:id', async function(req,res,next){
+  console.log(req.body);
   let result = await Model.findByIdAndUpdate(req.params.id,{
     title:req.body.title,
     description:req.body.description,
