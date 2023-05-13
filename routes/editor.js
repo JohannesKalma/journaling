@@ -52,13 +52,13 @@ async function getSelectList(){
 router.get('/',async function(req,res,next){ 
   let data = {};
   getSelectList();
-  res.render('editor',{data, _method:'POST', selectList: await getSelectList()});
+  res.render('editor',{data, _method:'POST', selectList: await getSelectList(),access_granted:res.access_granted});
 });
 
 router.get('/:id',async function(req,res,next){
   var data = await Model.findOne({_id:req.params.id});
   getSelectList();
-  res.render('editor',{data, _method:'PUT', selectList:await getSelectList()});
+  res.render('editor',{data, _method:'PUT', selectList:await getSelectList(),access_granted:res.access_granted});
 });
 
 router.use(methodOverride('_method'));
