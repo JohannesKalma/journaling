@@ -37,6 +37,7 @@ router.use(function(req,res,next){
   if ( req.cookies.ACCESS_TOKEN ){
     let data = jwt.verify(req.cookies.ACCESS_TOKEN,process.env.ACCESS_TOKEN_KEY);
     req.access_granted=data.access_granted;
+    res.access_granted=data.access_granted;
     next();
     return;
   }
