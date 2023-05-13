@@ -22,17 +22,21 @@
 
     <section class="container">
 	    <a href="<%= process.env.BASE_URL %>">Home</a>
+
             &nbsp;|&nbsp;
-   <% if ( locals.access_granted ) { %>
-   <a href="<%= process.env.BASE_URL %>/login">Logout yy</a> 
-   <% } else { %> 
-   <a href="<%= process.env.BASE_URL %>/login">Login xx</a> 
-   <% } %>
+
+            <% if ( locals.access_granted ) { %>
+            <a href="<%= process.env.BASE_URL %>/login">Logout</a> 
             &nbsp;|&nbsp;
-            <a href="<%= process.env.BASE_URL %>/editor">New</a> 
-&nbsp;|&nbsp;
-<% if(locals.access_granted) { %><%- access_granted %> <% } %>
-            <!--<a href="./realtime">Realtime</a>-->
+            <a href="<%= process.env.BASE_URL %>/editor">New</a>
+            <% } else { %> 
+            <a href="<%= process.env.BASE_URL %>/login">Login</a>
+            <% } %>
+
+<!-- <% if(locals.access_granted) { %><%- access_granted %> <% } %> -->
+<!-- &nbsp;|&nbsp; -->
+<!-- <a href="./realtime">Realtime</a> -->
+
     </section>
   </nav>
   <section class="container">
