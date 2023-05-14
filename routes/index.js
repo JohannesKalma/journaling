@@ -35,7 +35,7 @@ router.use(function(req,res,next){
 router.get('/', async function(req, res, next) {
 
   if (! res.access_granted == true ) {
-    res.render('login',{return_page:'editor'});
+    res.render('restricted',{});
     return
   } 
 
