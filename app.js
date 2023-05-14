@@ -9,6 +9,7 @@ require('dotenv').config()
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var editorRouter = require('./routes/editor');
 var realtimeRouter = require('./routes/realtime');
 var p1Router = require('./routes/p1');
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 
 app.use('/login', loginRouter);
+app.use('/logout',logoutRouter)
 app.use('/editor', editorRouter);
 app.use('/realtime',realtimeRouter);
 //app.use('/rt',rtRouter);
