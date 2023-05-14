@@ -36,7 +36,7 @@ router.get('/', async function(req, res, next) {
   let documentHeaders = [];
    
   /* mongo getter*/  
-  var mongodocs = await model.find();
+  var mongodocs = await model.find().sort({'createdAt':-1});
   for (doc of mongodocs){
     if (doc.public == true || ( res.access_granted == true && doc.public == false ) ) {
       let documentHeader = {
