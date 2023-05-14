@@ -33,12 +33,18 @@ router.use(function(req,res,next){
 
 /* GET - home page, show list of recipees */
 router.get('/', async function(req, res, next) {
+
+  if (! res.access_granted == true ) {
+    res.render('login',{return_page:'editor'});
+    return
+  } 
+
+
   let documentHeaders = [];
-   
   /* mongo getter*/  
   var mongodocs = await model.find();
   for (doc of mongodocs){
-    if (doc.public == true || ( res.access_granted == true && doc.public == false ) ) {
+    //if (doc.public == true || ( res.access_granted == true && doc.public == false ) ) {
       let documentHeader = {
         id : doc._id,
         data : {
@@ -51,7 +57,7 @@ router.get('/', async function(req, res, next) {
       };
       documentHeaders.push(documentHeader);
     }
-  }
+  //}
   res.render('index',{documentHeaders,access_granted:res.access_granted,title:'Journal Johannes'});
 });
 
