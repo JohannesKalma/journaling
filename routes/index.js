@@ -31,14 +31,13 @@ router.use(function(req,res,next){
   next();
 });
 
-/* GET - home page, show list of recipees */
 router.get('/', async function(req, res, next) {
-
+  
+  // if no logintoken, then render restricted page and quit.
   if (! res.access_granted == true ) {
     res.render('restricted',{});
     return
   } 
-
 
   let documentHeaders = [];
   /* mongo getter*/  
