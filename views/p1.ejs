@@ -1,13 +1,17 @@
 <p>
-  </span><span id="watt"></span>&nbsp;<span>watt</span>
+  <span id="watt"></span>&nbsp;<span>watt</span>
 </p>
 
 <p>
-  <span id="kwh"></span>&nbsp;<span>kWh</span>
+  verbuikt: <span id="kwhcons"></span>&nbsp;<span>kWh</span>
 </p>
 
 <p>
-  <span id="m3"></span>&nbsp;<span>m<sup>3</sup></span>
+  geleverd: <span id="kwhprod"></span>&nbsp;<span>m<sup>3</sup></span>
+</p>
+
+<p>
+  gas: <span id="m3"></span>&nbsp;<span>m<sup>3</sup></span>
 </p>
 
 
@@ -23,8 +27,11 @@ async function getData() {
   Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(([{data: current}, {data: day}] )=> {
         console.log({ current, day });
         document.getElementById('watt').innerHTML=current.CONSUMPTION_W;
-        document.getElementById('kwh').innerHTML=day.CONSUMPTION_DELTA_KWH.toFixed(1);
+        document.getElementById('kwhcons').innerHTML=day.CONSUMPTION_DELTA_KWH.toFixed(1);
+        document.getElementById('kwhprod').innerHTML=day.PRODUCTION_DELTA_KWH.toFixed(1);
+        
         document.getElementById('m3').innerHTML=day.CONSUMPTION_GAS_DELTA_M3.toFixed(1);
+
 
       });
 
