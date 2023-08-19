@@ -19,8 +19,11 @@ router.get('/', function(req, res, next) {
  */
 
 router.post('/', function(req, res, next) {
+  console.log('router.post');
   res.clearCookie('ACCESS_TOKEN');
+  console.log('cookie cleared');
   if (req.body._key === process.env.USER_KEY){
+      console.log('key matches');	  
       let tokenExpires = 1000*60*60*24;
       let access_token = jwt.sign({user_name:req.body._name , access_granted: true},process.env.ACCESS_TOKEN_KEY,{expiresIn: tokenExpires});
       res.cookie('ACCESS_TOKEN',access_token,{maxAge: 1000*60*60*12 });
