@@ -5,15 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressLayouts = require('express-ejs-layouts');
 
+
 require('dotenv').config()
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
 var editorRouter = require('./routes/editor');
-//var realtimeRouter = require('./routes/realtime');
-//var journaltypeRouter = require('./routes/journaltype');
-//var rtRouter = require('./routes/rt');
+var fupRouter = require('./routes/fileUpload');
 
 var app = express();
 
@@ -34,9 +33,9 @@ app.use(expressLayouts);
 app.use('/login', loginRouter);
 app.use('/logout',logoutRouter)
 app.use('/editor', editorRouter);
-//app.use('/realtime',realtimeRouter);
-//app.use('/journaltype',journaltypeRouter)
+app.use('/fup',fupRouter);
 app.use('/', indexRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

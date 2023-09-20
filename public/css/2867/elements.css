@@ -51,7 +51,8 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 1em;
+	margin: 0;
+        padding: 0 0 0 2rem;
 }
 
 ul {
@@ -62,11 +63,13 @@ ol {
 	list-style: decimal;
 }
 
+/**
 li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
+***/
 
 dt {
 	font-weight: bold;

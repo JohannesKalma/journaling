@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>
-    Journaling Johannes Kalma
+    <% let titlePost='Journaling Johannes Kalma' %>
+    <% if ( locals.data && locals.data.title ) { %>
+      <%= locals.data.title +' ['+titlePost+']' %>
+    <% } else { %> 
+      <%= titlePost %>
+    <% } %>
   </title>
   <!-- theme 2867 styling-->
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/2867.css?v1.0.0' />
@@ -16,31 +21,26 @@
 <body>
   
   <nav>
-<!--
-<%- //JSON.stringify(locals) %>
--->
-
     <section class="container">
-	    <a href="<%= process.env.BASE_URL %>">Home</a>
-
-            &nbsp;|&nbsp;
-
             <% if ( locals.access_granted ) { %>
+            <a href="<%= process.env.BASE_URL %>">Home</a>
+            &nbsp;|&nbsp;
             <a href="<%= process.env.BASE_URL %>/logout">Logout</a> 
             &nbsp;|&nbsp;
             <a href="<%= process.env.BASE_URL %>/editor">New</a>
-            <% } else { %> 
-            <a href="<%= process.env.BASE_URL %>/login">Login</a>
             <% } %>
 
-<!-- <% if(locals.access_granted) { %><%- access_granted %> <% } %> -->
-<!-- &nbsp;|&nbsp; -->
-<!-- <a href="./realtime">Realtime</a> -->
-
+<% /*********** %>
+//else { %> 
+//            <a href="<%= process.env.BASE_URL %>/login">Login</a>
+//            <% } %>
+<% ***********/ %>
     </section>
   </nav>
+
   <section class="container">
-  <%- body%>
+     <%- body%>
   </section>
+
 </body>
 </html>
