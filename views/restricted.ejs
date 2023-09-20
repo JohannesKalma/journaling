@@ -2,7 +2,7 @@
 .restricted{
   background-image: url("<%= process.env.BASE_URL %>/images/Authorized.jpg");
 
-  height: calc(100vh - 3.55555rem);
+  height: 100vh;
   width: 100vw;
 
   background-position: center;
@@ -17,3 +17,10 @@
 </style>
 
 <div class="restricted"></div>
+
+<script>
+  document.addEventListener("click",()=>{
+    console.log('klik');
+    location.href='<%= process.env.BASE_URL %>/login'
+  })
+</script>

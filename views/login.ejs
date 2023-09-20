@@ -1,46 +1,52 @@
-<!--<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="https://example.com/image.svg">
+<style>
+  .restricted{
+    background-image: url("<%= process.env.BASE_URL %>/images/Authorized.jpg");
+  
+    height: 100vh;
+    width: 100vw;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container{
+    width:100%;
+    margin:0;
+  }
+  .login-form{
+    padding: 5rem;    
+  } 
+</style>
 
-  <title>Login Form</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
-  <link rel="stylesheet" href="<%= process.env.BASE_URL %>/css/login.css">
-</head>
-<body>-->
-<!-- partial:index.partial.html -->
-<div class="login-form">
+<div class="restricted">
+  <div class="login-form">
 
-  <form action="<%= process.env.BASE_URL %>/login" method="POST">
-    <h1>Login</h1>
-    <div class="content">
-         <% if (locals.return_page) { %>
-         <input type="hidden" name="return_page" value=" <%= locals.return_page %> ">
-         <% } %>
-      <div class="input-field">
-        <input type="name" name="_name" placeholder="Email" autocomplete="nope">
-      </div>
-      <div class="input-field">
-        <input type="password" name="_key" placeholder="Password" autocomplete="new-password">
-      </div>
-      <% if (locals.message) { %>
-        <div class="message">
-           <%= locals.message %>
+    <form action="<%= process.env.BASE_URL %>/login" method="POST">
+      <div class="content">
+          <% if (locals.return_page) { %>
+          <input type="hidden" name="return_page" value=" <%= locals.return_page %> ">
+          <% } %>
+        <div class="input-field">
+          <input type="name" name="_name" placeholder="Email" autocomplete="nope">
         </div>
-     <% } %>
-      <!--<a href="#" class="link">Forgot Your Password?</a>-->
-    </div>
-    <div class="action">
-      <!--<button>Register</button>
-      <button>Sign in</button>-->
-      <input type="submit" value="Sign in" />
-    </div>
-  </form>
+        <div class="input-field">
+          <input type="password" name="_key" placeholder="Password" autocomplete="new-password">
+        </div>
+        <% if (locals.message) { %>
+          <div class="message">
+            <%= locals.message %>
+          </div>
+        <% } %>
+        <!--<a href="#" class="link">Forgot Your Password?</a>-->
+      </div>
+      <div class="action">
+        <!--<button>Register</button>
+        <button>Sign in</button>-->
+        <input type="submit" value="Sign in" />
+      </div>
+    </form>
+  </div>
 </div>
 <!-- partial -->
 <script  src="<%= process.env.BASE_URL %>/js/login.js"></script>
 
-<!--</body>
-</html>-->

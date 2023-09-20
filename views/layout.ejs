@@ -19,15 +19,16 @@
 </head>
 
 <body>
-  
-  <nav>
-    <section class="container">
             <% if ( locals.access_granted ) { %>
-            <a href="<%= process.env.BASE_URL %>">Home</a>
-            &nbsp;|&nbsp;
-            <a href="<%= process.env.BASE_URL %>/logout">Logout</a> 
-            &nbsp;|&nbsp;
-            <a href="<%= process.env.BASE_URL %>/editor">New</a>
+              <nav>
+                <section class="container">
+                  <a href="<%= process.env.BASE_URL %>">Home</a>
+                  &nbsp;|&nbsp;
+                  <a href="<%= process.env.BASE_URL %>/logout">Logout</a> 
+                  &nbsp;|&nbsp;
+                  <a href="<%= process.env.BASE_URL %>/editor">New</a>
+                </section>
+              </nav>
             <% } %>
 
 <% /*********** %>
@@ -35,8 +36,7 @@
 //            <a href="<%= process.env.BASE_URL %>/login">Login</a>
 //            <% } %>
 <% ***********/ %>
-    </section>
-  </nav>
+  
 
   <section class="container">
      <%- body%>
