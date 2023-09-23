@@ -3,15 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% let titlePostFix='Journaling Johannes Kalma' %>
+  <% let title='' %>
+  <% let description='' %>
+  <% let shortTitle='' %>
+
+  <% if ( locals.data && locals.data.title ) { %>
+    <% shortTitle = locals.data.title %>
+  <% } %>
+  <% title = shortTitle+' ['+titlePostFix+']' %>
+
+  <% description=shortTitle %>
+  <% if ( locals.data && locals.data.description ) { %>
+    <% description = locals.data.description %>
+  <% } %>
+
+  <% let Url=process.env.BASE_URL %>
+  <% if ( locals.data && locals.data._id ) { %>
+    <% Url += '/'+locals.data._id %>
+  <% } %>
 
   <title>
-    <% let titlePost='Journaling Johannes Kalma' %>
-    <% if ( locals.data && locals.data.title ) { %>
-      <%= locals.data.title +' ['+titlePost+']' %>
-    <% } else { %> 
-      <%= titlePost %>
-    <% } %>
+    <%= title %>
   </title>
+  <meta name="description" content="<%= description %>" />
+
+  <meta property="og:title" content="<%= shortTitle %>" />
+  <meta property="og:url" content="<%= Url %>" />
+  <meta property="og:description" content="<%= description %>" />
+  <meta property="og:image" content="<%= process.env.BASE_URL %>/images/aWalk.png" />
+
   <!-- theme 2867 styling-->
   <link rel='stylesheet' href='<%= process.env.BASE_URL %>/css/2867/2867.css?v1.0.0' />
   <!-- local styling-->
@@ -19,24 +40,17 @@
 </head>
 
 <body>
-            <% if ( locals.access_granted ) { %>
-              <nav>
-                <section class="container">
-                  <a href="<%= process.env.BASE_URL %>">Home</a>
-                  &nbsp;|&nbsp;
-                  <a href="<%= process.env.BASE_URL %>/logout">Logout</a> 
-                  &nbsp;|&nbsp;
-                  <a href="<%= process.env.BASE_URL %>/editor">New</a>
-                </section>
-              </nav>
-            <% } %>
-
-<% /*********** %>
-//else { %> 
-//            <a href="<%= process.env.BASE_URL %>/login">Login</a>
-//            <% } %>
-<% ***********/ %>
-  
+  <% if ( locals.access_granted ) { %>
+    <nav>
+      <section class="container">
+        <a href="<%= process.env.BASE_URL %>">Home</a>
+        &nbsp;|&nbsp;
+        <a href="<%= process.env.BASE_URL %>/logout">Logout</a> 
+        &nbsp;|&nbsp;
+        <a href="<%= process.env.BASE_URL %>/editor">New</a>
+      </section>
+    </nav>
+  <% } %>
 
   <section class="container">
      <%- body%>
