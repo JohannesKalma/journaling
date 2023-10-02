@@ -5,26 +5,26 @@
 
 html {
   line-height: 1.7;
-  font-family: Roboto, Oxygen-Sans, Ubuntu, sans-serif;
+  font-family: 'Work Sansxxxx', Roboto, Oxygen-Sans, Ubuntu, sans-serif;
   font-weight: normal;
   color: #404040;
 }  
 
 @media only screen and (min-width: 0) {
   html {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 

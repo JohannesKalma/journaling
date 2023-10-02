@@ -10,7 +10,7 @@ let md = require('markdown-it')(
    linkify: true,
    typographer: true,
    breaks:true
-  });
+  }).use(require('markdown-it-footnote'));
 
 const model = require("../models/documents") // new
 
