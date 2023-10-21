@@ -5,7 +5,6 @@
     <hr>
     <ul class="frontpage">
       <% for(var i=0; i<documentHeaders.length; i++) { %>
-
           <li>
             <%- documentHeaders[i].data.public %>    
             <% if ( documentHeaders[i].file != null ) {%>
@@ -23,6 +22,5 @@
             <%- documentHeaders[i].data.Date %>
             <%- documentHeaders[i].data.Public %>
           </li>
-
       <% } %>
     </ul>
