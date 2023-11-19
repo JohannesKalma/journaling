@@ -50,4 +50,9 @@ Backend:
   * markdown-it encode markdown to html
 
 Client:
-  * [EasyMDE - Markdown Editor](https://github.com/Ionaru/easy-markdown-editor) 
+  * [EasyMDE - Markdown Editor](https://github.com/Ionaru/easy-markdown-editor)
+
+![image](https://github.com/JohannesKalma/journaling/assets/151011488/6ceb5857-a66b-4c12-ac27-9c3410ee7e39)
+
+![image](https://github.com/JohannesKalma/journaling/assets/151011488/159d8ae3-57d1-48eb-b0cd-33f3c2abcc70)
+ 
