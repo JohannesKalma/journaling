@@ -1,39 +1,40 @@
-This is a project for a login screen demo.
-No credential system. Fixed to 1 single user that logs in with an auth screen.
-node-modules:
-- express
-- jwt
-- 
+# A journaling note taking blog nodejs app.
 
-step 1:
-create (generate) a base express application: 
-`$ npx express-generator --view=ejs --git`
-  -- ejs is the viewer
-  -- it's a git project (add .gitignore)
+Inspired during a timemanagement training to write your thoughs away in a journal or diary to empty your mind.
+Or as said in Dutch 'van je af schrijven'.
 
-install nodemon (only development dependency)
-`$ npm install --save-dev nodemon`
+This is a online journaling webserver that works for me. 
+A tool to build a repository of thoughts, or create a page that can be shared with anyone. I've added this nodejs app behind a nginx reverse proxy server and use PM2 as heartbeat tool (both not documented here)
 
-ejs installation showed a critical serverity vulnerability message:
-`$ npm audit fix --force`
+## Features
 
-to make use of a .env file the dotenv module is needed:
-`$ npm install --save dotenv`
+ * Write, Read, Share journals.
+ * Simple to install
+ * Speed
 
-and finaly for the auth I'm going to use jsonwebtoken
-`$ npm install --save jsonwebtoken`
+## Requirements
 
-now all modules needed have been installed.
+ * [node.js](http://nodejs.org/)
+ * [mongodb](http://www.mongodb.org/)
 
-The express generator allready did a complete setup of a simple project.
-Both a views and routes folder were created. a public folder that can be used to store the static files (stylesheets, javascripts and images)
+### Ubuntu
+    
+  `$ sudo apt-get install mongodb`
 
-Now some base configuration is needed in the package.json file, by adding this line to the scripts node:
-"devStart": "nodemon ./bin/www"
+## Install Journaling
+    
+    $ git clone https://github.com/JohannesKalma/journaling.git
+    $ cd journaling
+    $ npm install
 
-The app can be started in deve by entering
-$nodemon start devStart
+## Setup
+    .env file must be created, with these variables:
+    PORT=3000
+    BASE_URL=
+    COOKIE_PARSER_KEY=
+    ACCESS_TOKEN_KEY=
+    USER_KEY= 
+    MONGODB="mongodb://127.0.0.1:27017/documents" 
 
-now when changing any line in the application, it will restart itself.
-
-now let's 
+## Start the server
+    $ npm run start
