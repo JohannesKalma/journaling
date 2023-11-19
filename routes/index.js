@@ -46,7 +46,7 @@ router.get('/', async function (req, res, next) {
     };
     documentHeaders.push(documentHeader);
   }
-  res.render('index', { documentHeaders, access_granted: res.access_granted, title: 'Journal Johannes' });
+  res.render('index', { documentHeaders, access_granted: res.access_granted, title: 'My Documents' });
 });
 
 router.get('/:i', async function (req, res, next) {

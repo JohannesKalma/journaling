@@ -1,25 +1,25 @@
 <style>
-.restricted{
-  background-image: url("<%= process.env.BASE_URL %>/images/Authorized.jpg");
+  .restricted {
+    background-image: url("<%= process.env.BASE_URL %>/images/Authorized.jpg");
 
-  height: 100vh;
-  width: 100vw;
+    height: 100vh;
+    width: 100vw;
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.container{
-  width:100%;
-  margin:0;
-}
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
+  .container {
+    width: 100%;
+    margin: 0;
+  }
 </style>
 
 <div class="restricted"></div>
 
 <script>
-  document.addEventListener("click",()=>{
-    location.href='<%= process.env.BASE_URL %>/login'
+  document.addEventListener("click", () => {
+    location.href = '<%= process.env.BASE_URL %>/login'
   })
 </script>
