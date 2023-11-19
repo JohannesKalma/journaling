@@ -1,4 +1,4 @@
-# A journaling note taking blog nodejs app.
+# A notes, micro blog journaling nodejs app.
 
 Inspired during a timemanagement training to write your thoughs away in a journal or diary to empty your mind.
 Or as said in Dutch 'van je af schrijven'.
@@ -8,7 +8,9 @@ A tool to build a repository of thoughts, or create a page that can be shared wi
 
 ## Features
 
- * Write, Read, Share journals.
+ * Content hidden by default
+ * Write in markdown
+ * Share url 
  * Simple to install
  * Speed
 
@@ -38,3 +40,14 @@ A tool to build a repository of thoughts, or create a page that can be shared wi
 
 ## Start the server
     $ npm run start
+
+## Used modules
+Backend:
+  * express router
+  * ejs based views
+  * mongoose model
+  * jsonwebtoken for authentication
+  * markdown-it encode markdown to html
+
+Client:
+  * [EasyMDE - Markdown Editor](https://github.com/Ionaru/easy-markdown-editor) 

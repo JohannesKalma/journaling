@@ -3,6 +3,5 @@ module.exports = {
     name   : "journaling",
     script : "bin/www",
     watch : true,
-    ignore_watch : ["documents"]
   }]
 }
