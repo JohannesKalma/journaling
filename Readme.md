@@ -10,7 +10,7 @@ A tool to build a repository of thoughts, or create a page that can be shared wi
 
  * Content hidden by default
  * Write in markdown
- * Share url 
+ * Share page url in read mode
  * Simple to install
  * Speed
 
