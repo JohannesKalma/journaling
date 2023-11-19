@@ -1,8 +1,6 @@
-var createError = require('http-errors');
-
-var express = require('express');
-var router = express.Router();
-let jwt = require('jsonwebtoken');
+const express = require('express');
+const router = express.Router();
+const jwt = require('jsonwebtoken');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -32,7 +30,6 @@ router.post('/', function(req, res, next) {
   }
   next(createError(401));
 });
-
 
 // error handler
 router.use(function(err, req, res, next) {
