@@ -53,7 +53,7 @@ Client:
   * [EasyMDE - Markdown Editor](https://github.com/Ionaru/easy-markdown-editor)
 
 ## Screenshots
-![image](https://raw.githubusercontent.com/JohannesKalma/JohannesKalma/main/images/Screenshot%202023-11-19%2021.34.06.png)
+![image](https://raw.githubusercontent.com/JohannesKalma/JohannesKalma/main/images/Screenshot%202023-11-19%2021.32.40.png)
 
 ![image](https://raw.githubusercontent.com/JohannesKalma/JohannesKalma/main/images/Screenshot%202023-11-19%2021.34.06.png)
  
